@@ -17,12 +17,23 @@ Distribute this repository as the installer. Monetization happens through Avalti
 ## Install
 
 ```bash
-git clone <this-repository-url>
+git clone https://github.com/avaltix/avaltix-skill.git
 cd avaltix-skill
 bash install.sh
 ```
 
 OmeniaClaw imports compatible Claude skills from `~/.claude/skills` into `~/.omeniaclaw/skills` during install/update.
+
+Portable package download:
+
+```bash
+curl -L -o avaltix-skill-0.1.0.tar.gz https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.1.0.tar.gz
+curl -L -o avaltix-skill-0.1.0.tar.gz.sha256 https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.1.0.tar.gz.sha256
+sha256sum -c avaltix-skill-0.1.0.tar.gz.sha256
+tar -xzf avaltix-skill-0.1.0.tar.gz
+cd avaltix
+bash install.sh
+```
 
 ## Configure
 
