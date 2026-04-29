@@ -17,7 +17,7 @@ Distribute this repository as the installer. Monetization happens through Avalti
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_ORG/avaltix-skill.git
+git clone <this-repository-url>
 cd avaltix-skill
 bash install.sh
 ```
