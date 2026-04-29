@@ -1,0 +1,19 @@
+{
+  "name": "avaltix-skill",
+  "version": "0.1.0",
+  "private": true,
+  "license": "UNLICENSED",
+  "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "api": "node scripts/avaltix-api.mjs",
+    "configure": "node scripts/configure.mjs",
+    "security-check": "node scripts/security-check.mjs",
+    "snapshot": "node scripts/avaltix-api.mjs snapshot",
+    "opportunities": "node scripts/avaltix-api.mjs opportunities 3",
+    "macro": "node scripts/avaltix-api.mjs macro",
+    "self-test": "node tests/self-test.mjs && node scripts/security-check.mjs"
+  }
+}
