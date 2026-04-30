@@ -1,6 +1,6 @@
 {
   "name": "avaltix-skill",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "license": "UNLICENSED",
   "type": "module",
@@ -12,7 +12,12 @@
     "configure": "node scripts/configure.mjs",
     "security-check": "node scripts/security-check.mjs",
     "snapshot": "node scripts/avaltix-api.mjs snapshot",
+    "market-brief": "node scripts/avaltix-api.mjs market-brief",
+    "forecast": "node scripts/avaltix-api.mjs probabilistic-forecast",
+    "context": "node scripts/avaltix-api.mjs cross-asset-context",
     "opportunities": "node scripts/avaltix-api.mjs opportunities 3",
+    "opportunity-scan": "node scripts/avaltix-api.mjs opportunity-scan",
+    "research-memo": "node scripts/avaltix-api.mjs research-memo",
     "macro": "node scripts/avaltix-api.mjs macro",
     "self-test": "node tests/self-test.mjs && node scripts/security-check.mjs"
   }

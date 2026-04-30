@@ -1,7 +1,7 @@
 ---
 name: avaltix
 description: "Use when: the user asks OpenClaw or Claude Code to analyze markets with Avaltix, inspect AI trading opportunities, search assets, read macro snapshots, explain indicators, or prepare a market brief from the Avaltix Agent API. Read-only only: never execute trades, change accounts, manage billing, call admin endpoints, or use MT bridge endpoints. Requires AVALTIX_BASE_URL and AVALTIX_API_KEY."
-argument-hint: "analyze XAUUSD 1h | top opportunities | macro snapshot | search AAPL | market brief"
+argument-hint: "market-brief XAUUSD 1h | probabilistic-forecast BTC-USD 4h | opportunity-scan AAPL,MSFT,NVDA"
 ---
 
 # Avaltix
@@ -15,7 +15,12 @@ Use the Avaltix Agent API v1 as a read-only market intelligence source for OpenC
 | User asks for | Action |
 |---|---|
 | "analiza XAUUSD" | Run `node scripts/avaltix-api.mjs analyze XAUUSD 1h` |
+| "market brief de XAUUSD" | Run `node scripts/avaltix-api.mjs market-brief XAUUSD 1h` |
+| "forecast probabilístico de BTC" | Run `node scripts/avaltix-api.mjs probabilistic-forecast BTC-USD 4h` |
+| "contexto cross-asset de EUR/USD" | Run `node scripts/avaltix-api.mjs cross-asset-context EUR/USD 1h` |
 | "mejores oportunidades" | Run `node scripts/avaltix-api.mjs opportunities 3` |
+| "escanea mi watchlist" | Run `node scripts/avaltix-api.mjs opportunity-scan AAPL,MSFT,NVDA 1h` |
+| "memo institucional de NVDA" | Run `node scripts/avaltix-api.mjs research-memo NVDA 1h` |
 | "snapshot de mercado" | Run `node scripts/avaltix-api.mjs snapshot` |
 | "busca AAPL/BTC/EURUSD" | Run `node scripts/avaltix-api.mjs search <query>` |
 | "indicadores de BTC 1h" | Run `node scripts/avaltix-api.mjs indicators BTC 1h` |
@@ -51,6 +56,11 @@ node scripts/avaltix-api.mjs macro
 node scripts/avaltix-api.mjs calendar AAPL
 node scripts/avaltix-api.mjs events earnings AAPL
 node scripts/avaltix-api.mjs analyze XAUUSD 1h
+node scripts/avaltix-api.mjs market-brief XAUUSD 1h
+node scripts/avaltix-api.mjs probabilistic-forecast BTC-USD 4h
+node scripts/avaltix-api.mjs cross-asset-context EUR/USD 1h
+node scripts/avaltix-api.mjs opportunity-scan AAPL,MSFT,NVDA 1h
+node scripts/avaltix-api.mjs research-memo NVDA 1h
 npm run self-test
 ```
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { COMMANDS, avaltixRequest, endpointForCommand, redactSecrets } from '../lib/client.mjs';
+import { COMMANDS, redactSecrets, runAvaltixCommand } from '../lib/client.mjs';
 
 function usage() {
   console.error(`Usage:
@@ -11,7 +11,14 @@ function usage() {
   avaltix-api macro
   avaltix-api calendar <symbol> [user_tz]
   avaltix-api events [economic|earnings|dividends|crypto|all] [symbol] [days]
-  avaltix-api analyze <symbol> [timeframe]`);
+  avaltix-api analyze <symbol> [timeframe]
+
+Star workflows:
+  avaltix-api market-brief <symbol> [timeframe]
+  avaltix-api probabilistic-forecast <symbol> [timeframe]
+  avaltix-api cross-asset-context <symbol> [timeframe]
+  avaltix-api opportunity-scan [AAPL,MSFT,EUR/USD] [timeframe]
+  avaltix-api research-memo <symbol> [timeframe]`);
 }
 
 const [command, ...args] = process.argv.slice(2);
@@ -22,8 +29,7 @@ if (!command || !COMMANDS.has(command)) {
 }
 
 try {
-  const request = endpointForCommand(command, args);
-  const payload = await avaltixRequest(request.path, request);
+  const payload = await runAvaltixCommand(command, args);
   console.log(JSON.stringify(payload, null, 2));
 } catch (error) {
   const message = error instanceof Error ? error.message : String(error);

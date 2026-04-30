@@ -14,6 +14,25 @@ Distribute this repository as the installer. Monetization happens through Avalti
 - API keys are stored hashed server-side and are shown only once during create/rotate.
 - The client never calls admin, billing, account mutation, MetaTrader bridge, worker, retry, sync, or trading execution endpoints.
 
+## Star Workflows
+
+| Workflow | Command | What It Sells |
+|---|---|---|
+| Avaltix Market Brief | `market-brief <symbol> [timeframe]` | One-asset technical, macro, and event brief. |
+| Probabilistic Forecast | `probabilistic-forecast <symbol> [timeframe]` | Dominant and alternate scenario map from Avaltix signals. |
+| Cross-Asset Context | `cross-asset-context <symbol> [timeframe]` | USD/rates/risk/event context around an asset. |
+| Opportunity Scan | `opportunity-scan [watchlist] [timeframe]` | Prioritized watchlist and top opportunity context. |
+| Research Memo | `research-memo <symbol> [timeframe]` | Compact institutional memo from Avaltix intelligence. |
+
+Product documentation:
+
+- [API product brief](docs/api-product.md)
+- [Quickstart](docs/quickstart.md)
+- [Examples](docs/examples.md)
+- [Use with OpenClaw and Claude Code](docs/openclaw-claude-code.md)
+- [Build a research agent](docs/research-agent.md)
+- [Productization review plan](docs/productization-review.md)
+
 ## Install
 
 ```bash
@@ -27,10 +46,10 @@ OmeniaClaw imports compatible Claude skills from `~/.claude/skills` into `~/.ome
 Portable package download:
 
 ```bash
-curl -L -o avaltix-skill-0.1.0.tar.gz https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.1.0.tar.gz
-curl -L -o avaltix-skill-0.1.0.tar.gz.sha256 https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.1.0.tar.gz.sha256
-sha256sum -c avaltix-skill-0.1.0.tar.gz.sha256
-tar -xzf avaltix-skill-0.1.0.tar.gz
+curl -L -o avaltix-skill-0.2.0.tar.gz https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.2.0.tar.gz
+curl -L -o avaltix-skill-0.2.0.tar.gz.sha256 https://github.com/avaltix/avaltix-skill/raw/main/dist/avaltix-skill-0.2.0.tar.gz.sha256
+sha256sum -c avaltix-skill-0.2.0.tar.gz.sha256
+tar -xzf avaltix-skill-0.2.0.tar.gz
 cd avaltix
 bash install.sh
 ```

@@ -6,7 +6,9 @@ The public skill uses one read-only gateway endpoint:
 |---|---:|---|
 | `/api/v1/agent/command` | POST | Execute an allowlisted read-only Avaltix command. |
 
-Supported commands: `snapshot`, `search`, `indicators`, `opportunities`, `macro`, `calendar`, `events`, `analyze`.
+Supported gateway commands: `snapshot`, `search`, `indicators`, `opportunities`, `macro`, `calendar`, `events`, `analyze`.
+
+Public star workflows compose those gateway commands client-side: `market-brief`, `probabilistic-forecast`, `cross-asset-context`, `opportunity-scan`, `research-memo`.
 
 The server maps each command to the correct internal read-only source and enforces the user's Agent API key scopes, paid plan, daily quota, and per-minute limit. Do not call internal, admin, billing, account mutation, MetaTrader bridge, worker, retry, sync, or trading execution endpoints from the skill.
 
